@@ -1,0 +1,29 @@
+   var namefield = settings["namefield"];
+            var height = settings["height"];
+            var imagefield = settings["imagefield"];
+            var dropdownheight = settings["dropdownheight"];
+            var AdvanceLookup = document.createElement("div");
+            AdvanceLookup.id = "AdvanceLookup" + settings["KeyID"];
+            AdvanceLookup.setAttribute("class", "AdvanceLookup");
+            AdvanceLookup.style.width = settings["width"];
+            AdvanceLookup.style.height = settings["height"];
+            AdvanceLookup.style.background = settings["background"];
+            $(AdvanceLookup).click(function(e){
+                e.stopPropagation();
+            });
+            obj.appendChild(AdvanceLookup);
+
+            var AdvanceLookupDropdownContainer = document.createElement("div");
+            AdvanceLookupDropdownContainer.id = "AdvanceLookupDropdownContainer" + settings["KeyID"];
+            AdvanceLookupDropdownContainer.setAttribute("class", "AdvanceLookupDropdownContainer");
+            AdvanceLookupDropdownContainer.style.width = settings["width"];
+            AdvanceLookupDropdownContainer.style.background = settings["dropdownbackground"];
+            $(AdvanceLookupDropdownContainer).css("max-height", dropdownheight);
+            obj.appendChild(AdvanceLookupDropdownContainer);
+   
+            var HFAdvanceLookupValue = document.createElement("input");
+            HFAdvanceLookupValue.id = "HFAdvanceLookupValue" + settings["KeyID"];
+            HFAdvanceLookupValue.setAttribute("class", "HFAdvanceLookupValue");
+            HFAdvanceLookupValue.setAttribute("type", "hidden");
+            HFAdvanceLookupValue.setAttribute("value", "");
+            AdvanceLookup.appendChild(HFAdvanceLookupValue);
